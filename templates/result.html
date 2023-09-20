@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Result Page{% endblock %} {% block
+content %}
+
+<div class="container">
+  <h1 class="mb-4">Result</h1>
+  <!-- Using constants, variables and derived values in place
+of literals. -->
+  <p class="lead">
+    {{session['user']}} you scored {{ score }} out of {{ numberOfQuestions }}.
+  </p>
+  {% if incorrectQuestions is defined and incorrectQuestions|length > 0 %}
+  <p>Incorrect Questions:</p>
+  <ul>
+    {% for item in incorrectQuestions%}
+    <li>Question {{ item }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <a href="/quiz" class="btn btn-primary">Try Again</a>
+  <a href="/logout" class="btn btn-danger">Logout</a>
+</div>
+
+{% endblock %}

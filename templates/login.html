@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Login Page{% endblock %} {% block
+content %}
+<div class="container">
+  <h1 class="mb-5">Login to take the quiz</h1>
+  <form action="/login" method="post">
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" name="nm" required />
+      <!--Evidence of testing unexpected cases, 
+        had someone complete the quiz without a name,
+        made the field required-->
+    </div>
+    <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}
